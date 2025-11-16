@@ -8,6 +8,7 @@ def index():
 
 @app.route("/file/<path:filename>")
 def download_file(filename):
+    app.logger.info(f"Downloading file: {filename}")
     return send_from_directory("filesys", filename)
 
 if __name__ == "__main__":
